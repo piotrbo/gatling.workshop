@@ -12,7 +12,8 @@ object ItemScenario extends CoreDsl with HttpDsl{
     .check(bodyString.saveAs("itemId")))
 
   val getItems = exec(http("get items").delete(itemsEndpoint + "/${itemId}")
-    .check(bodyString.validate()
+    //.check(bodyString.validate()
+  )
 
   override implicit def configuration: GatlingConfiguration = GatlingConfiguration.load()
 }
